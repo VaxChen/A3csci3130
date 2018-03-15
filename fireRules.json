@@ -1,0 +1,26 @@
+{
+  "rules": {
+    ".read": "true",
+    ".write": "true",
+    "contacts": {
+            "$contact": {
+                "name": {
+                    ".validate": "newData.isString() && newData.val().length <= 48 && newData.val().length => 2"
+                },
+                "address": {
+                    ".validate": "newData.isString() && newData.val().length < 50"
+                },
+                 "businessNum": {
+                    ".validate": "newData.isString() && newData.val().length = 9"
+                },
+                 "primaryBusiness":{
+                    ".validate": "newData.isString() && {Fisher, Distributor, Processor, Fish Monger}.contains(newData)"
+                },
+                 "province":{
+                    ".validate": "newData.isString() && {AB, BC, MB, NB, NL, NS, NT, NU, ON, PE, QC, SK, YT, “ “}.contains(newData)"
+                }
+
+            }
+        }
+  }
+}
